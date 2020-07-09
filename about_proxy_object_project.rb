@@ -29,8 +29,7 @@ class Proxy
     @messages.include?(method_name)
   end
 
-  def method_missing(method_name, *args, &block)
-    puts method_name  
+  def method_missing(method_name, *args, &block) 
     @messages << method_name
     @object.send(method_name, *args)
   end
